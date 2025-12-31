@@ -2,8 +2,9 @@
 Integration API endpoints - Slack, Teams, Jira, Trello test ve yönetim
 """
 
-from fastapi import APIRouter, Depends, HTTPException, Body
-from typing import Dict, Any, Optional
+from typing import Any, Dict, Optional
+
+from fastapi import APIRouter, Body, Depends, HTTPException
 from pydantic import BaseModel
 
 from app.auth import get_current_active_user, require_role
@@ -11,12 +12,8 @@ from app.models import User
 
 # Integration servisleri
 try:
-    from app.integrations import (
-        SlackIntegration,
-        TeamsIntegration,
-        JiraIntegration,
-        TrelloIntegration,
-    )
+    from app.integrations import (JiraIntegration, SlackIntegration,
+                                  TeamsIntegration, TrelloIntegration)
 
     INTEGRATIONS_AVAILABLE = True
 except ImportError:

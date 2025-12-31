@@ -1,15 +1,16 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
 import os
-
-from app.api import logs, analysis, dashboard
-from app.monitoring import get_metrics, http_requests_total, http_request_duration
-from starlette.middleware.base import BaseHTTPMiddleware
 import time
 
-from app.database import engine, Base
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+from starlette.middleware.base import BaseHTTPMiddleware
+
+from app.api import analysis, dashboard, logs
+from app.database import Base, engine
+from app.monitoring import (get_metrics, http_request_duration,
+                            http_requests_total)
 
 # Veritabanı tablolarını oluştur
 Base.metadata.create_all(bind=engine)
@@ -62,8 +63,7 @@ from app.api import stream
 app.include_router(stream.router, prefix="/api", tags=["Streaming"])
 
 # Saved searches
-from app.api import saved_searches
-from app.api import search_history
+from app.api import saved_searches, search_history
 
 app.include_router(
     saved_searches.router, prefix="/api/saved-searches", tags=["Saved Searches"]

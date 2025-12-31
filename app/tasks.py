@@ -3,15 +3,17 @@ Celery background tasks
 Büyük dosyalar ve uzun süren işlemler için async görevler
 """
 
-from celery import Celery
 import os
+
+from celery import Celery
 from sqlalchemy.orm import Session
-from app.database import SessionLocal
-from app.models import LogFile, LogEntry, LogAnalysis
-from app.log_parser import LogParser
-from app.analyzer import LogAnalyzer
+
 from app.ai_service import AIService
+from app.analyzer import LogAnalyzer
 from app.cache import invalidate_cache
+from app.database import SessionLocal
+from app.log_parser import LogParser
+from app.models import LogAnalysis, LogEntry, LogFile
 
 # Celery app oluştur
 celery_app = Celery(

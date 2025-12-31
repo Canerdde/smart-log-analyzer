@@ -4,11 +4,12 @@ Authentication utilities - JWT token oluşturma ve doğrulama
 
 from datetime import datetime, timedelta
 from typing import Optional
-from jose import JWTError, jwt
-from fastapi import Depends, HTTPException, status
-from fastapi import Request
+
+from fastapi import Depends, HTTPException, Request, status
 from fastapi.security import OAuth2PasswordBearer
+from jose import JWTError, jwt
 from sqlalchemy.orm import Session
+
 from app.database import get_db
 from app.models import User
 

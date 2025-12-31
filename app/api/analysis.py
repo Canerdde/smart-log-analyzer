@@ -1,13 +1,14 @@
+from datetime import datetime
+from typing import List, Optional
+
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
-from typing import List, Optional
-from datetime import datetime
 
+from app.cache import cache_analysis, get_cached_analysis
 from app.database import get_db
 from app.models import LogAnalysis, LogEntry
-from app.schemas import LogAnalysisResponse, LogEntryResponse
-from app.cache import get_cached_analysis, cache_analysis
 from app.pattern_detection import detect_patterns
+from app.schemas import LogAnalysisResponse, LogEntryResponse
 
 router = APIRouter()
 

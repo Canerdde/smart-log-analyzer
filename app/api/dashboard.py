@@ -1,10 +1,11 @@
-from fastapi import APIRouter, Depends
-from sqlalchemy.orm import Session
-from sqlalchemy import func
 from typing import List
 
+from fastapi import APIRouter, Depends
+from sqlalchemy import func
+from sqlalchemy.orm import Session
+
 from app.database import get_db
-from app.models import LogFile, LogEntry, LogAnalysis
+from app.models import LogAnalysis, LogEntry, LogFile
 from app.schemas import DashboardStats, LogFileResponse
 
 router = APIRouter()

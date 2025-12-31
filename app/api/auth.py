@@ -2,20 +2,18 @@
 Authentication API endpoints - Login, Register, User management
 """
 
-from fastapi import APIRouter, Depends, HTTPException, status
-from sqlalchemy.orm import Session
 from datetime import datetime, timedelta
 from typing import Optional
 
+from fastapi import APIRouter, Depends, HTTPException, status
+from sqlalchemy.orm import Session
+
+from app.auth import (ACCESS_TOKEN_EXPIRE_MINUTES, create_access_token,
+                      get_current_active_user, require_role)
 from app.database import get_db
 from app.models import User
-from app.schemas import UserCreate, UserResponse, Token, UserUpdate, LoginRequest
-from app.auth import (
-    create_access_token,
-    get_current_active_user,
-    require_role,
-    ACCESS_TOKEN_EXPIRE_MINUTES,
-)
+from app.schemas import (LoginRequest, Token, UserCreate, UserResponse,
+                         UserUpdate)
 
 router = APIRouter()
 

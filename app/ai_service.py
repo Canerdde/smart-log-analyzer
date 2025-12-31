@@ -1,5 +1,5 @@
-from typing import Dict, Any, Optional
 import os
+from typing import Any, Dict, Optional
 
 # OpenAI API'si isteğe bağlı - env'de API key yoksa devre dışı kalır
 try:

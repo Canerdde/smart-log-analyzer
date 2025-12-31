@@ -2,10 +2,10 @@
 Log Pattern Detection - Otomatik pattern tespiti ve benzer hataları gruplama
 """
 
-from typing import List, Dict, Any
-from collections import Counter
 import re
+from collections import Counter
 from difflib import SequenceMatcher
+from typing import Any, Dict, List
 
 
 def detect_patterns(

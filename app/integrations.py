@@ -2,10 +2,11 @@
 Integration Services - Slack, Teams, Jira, Trello, Webhook
 """
 
-import httpx
 import json
-from typing import Dict, Any, Optional, List
 from datetime import datetime
+from typing import Any, Dict, List, Optional
+
+import httpx
 
 
 class IntegrationService:

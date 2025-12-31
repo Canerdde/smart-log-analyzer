@@ -1,6 +1,7 @@
-from pydantic import BaseModel
 from datetime import datetime
-from typing import Optional, List, Dict, Any, TYPE_CHECKING, Union, ForwardRef
+from typing import TYPE_CHECKING, Any, Dict, ForwardRef, List, Optional, Union
+
+from pydantic import BaseModel
 
 
 class LogFileBase(BaseModel):

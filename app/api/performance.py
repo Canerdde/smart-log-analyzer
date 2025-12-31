@@ -2,17 +2,17 @@
 Performance Metrics API - Response time, throughput, bottleneck tespiti
 """
 
+import re
+from collections import defaultdict
+from datetime import datetime, timedelta
+from typing import Any, Dict, List, Optional
+
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
-from typing import List, Optional, Dict, Any
-from datetime import datetime, timedelta
-from collections import defaultdict
-import re
 
-from app.database import get_db
-from app.models import LogFile, LogEntry
 from app.auth import get_current_active_user
-from app.models import User
+from app.database import get_db
+from app.models import LogEntry, LogFile, User
 
 router = APIRouter()
 

@@ -3,15 +3,17 @@ Alert API endpoints
 Kritik hatalar için bildirim sistemi
 """
 
+from datetime import datetime
+from typing import List
+
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from typing import List
-from datetime import datetime
 
-from app.database import get_db
-from app.models import AlertRule, AlertHistory
-from app.schemas import AlertRuleCreate, AlertRuleResponse, AlertHistoryResponse
 from app.alerts import process_alert_rule
+from app.database import get_db
+from app.models import AlertHistory, AlertRule
+from app.schemas import (AlertHistoryResponse, AlertRuleCreate,
+                         AlertRuleResponse)
 
 router = APIRouter()
 

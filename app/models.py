@@ -1,19 +1,10 @@
-from sqlalchemy import (
-    Column,
-    Integer,
-    String,
-    DateTime,
-    Text,
-    ForeignKey,
-    Float,
-    JSON,
-    Boolean,
-    Table,
-)
+import bcrypt
+from sqlalchemy import (JSON, Boolean, Column, DateTime, Float, ForeignKey,
+                        Integer, String, Table, Text)
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
+
 from app.database import Base
-import bcrypt
 
 # Bcrypt doğrudan kullanılıyor (passlib yerine)
 

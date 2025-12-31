@@ -3,18 +3,19 @@ Alert sistemi - Kritik hatalar için bildirimler
 Email, Slack, Webhook desteği
 """
 
-import os
 import json
-from typing import Dict, Any, List, Optional
+import os
 from datetime import datetime, timedelta
-from sqlalchemy.orm import Session
-from sqlalchemy import and_
+from typing import Any, Dict, List, Optional
 
-from app.models import AlertRule, AlertHistory, LogEntry, LogFile
+from sqlalchemy import and_
+from sqlalchemy.orm import Session
+
+from app.models import AlertHistory, AlertRule, LogEntry, LogFile
 
 # Email gönderme (opsiyonel)
 try:
-    from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
+    from fastapi_mail import ConnectionConfig, FastMail, MessageSchema
 
     EMAIL_AVAILABLE = True
 except ImportError:
@@ -101,12 +102,8 @@ async def send_slack_notification(webhook_url: str, message: Dict[str, Any]):
 
 # Yeni integration servisleri
 try:
-    from app.integrations import (
-        SlackIntegration,
-        TeamsIntegration,
-        JiraIntegration,
-        TrelloIntegration,
-    )
+    from app.integrations import (JiraIntegration, SlackIntegration,
+                                  TeamsIntegration, TrelloIntegration)
 
     INTEGRATIONS_AVAILABLE = True
 except ImportError:

@@ -3,13 +3,14 @@ Log Entry Comments API
 Log satırlarına not ekleme, ekip işbirliği
 """
 
+from datetime import datetime
+from typing import List
+
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from typing import List
-from datetime import datetime
 
 from app.database import get_db
-from app.models import LogEntryComment, LogEntry
+from app.models import LogEntry, LogEntryComment
 from app.schemas import LogEntryCommentCreate, LogEntryCommentResponse
 
 router = APIRouter()

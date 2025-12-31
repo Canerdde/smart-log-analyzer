@@ -1,7 +1,7 @@
-from typing import List, Dict, Any
+import json
 from collections import Counter, defaultdict
 from datetime import datetime
-import json
+from typing import Any, Dict, List
 
 
 class LogAnalyzer:

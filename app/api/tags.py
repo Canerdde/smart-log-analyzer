@@ -2,23 +2,17 @@
 Tags and Categories API endpoints
 """
 
+from datetime import datetime
+from typing import List, Optional
+
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
-from typing import List, Optional
-from datetime import datetime
 
+from app.auth import get_current_active_user, get_optional_user, require_role
 from app.database import get_db
-from app.models import Tag, Category, LogFile, log_file_tags
-from app.schemas import (
-    TagCreate,
-    TagResponse,
-    CategoryCreate,
-    CategoryResponse,
-    CategoryUpdate,
-    BulkTagRequest,
-)
-from app.auth import get_current_active_user, require_role, get_optional_user
-from app.models import User
+from app.models import Category, LogFile, Tag, User, log_file_tags
+from app.schemas import (BulkTagRequest, CategoryCreate, CategoryResponse,
+                         CategoryUpdate, TagCreate, TagResponse)
 
 router = APIRouter()
 

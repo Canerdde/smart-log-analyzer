@@ -4,9 +4,9 @@ Performans iyileştirmesi için analiz sonuçlarını cache'ler
 """
 
 import json
-from typing import Optional, Dict, Any
 import os
 from datetime import timedelta
+from typing import Any, Dict, Optional
 
 # Redis opsiyonel
 try:

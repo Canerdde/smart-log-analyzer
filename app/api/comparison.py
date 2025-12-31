@@ -2,14 +2,16 @@
 Log Comparison API - İki log dosyasını karşılaştırma
 """
 
+from collections import Counter
+from typing import Any, Dict, List
+
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from typing import Dict, Any, List
-from collections import Counter
 
 from app.database import get_db
-from app.models import LogFile, LogEntry, LogAnalysis
-from app.schemas import LogComparisonRequest, LogComparisonResponse, LogFileResponse
+from app.models import LogAnalysis, LogEntry, LogFile
+from app.schemas import (LogComparisonRequest, LogComparisonResponse,
+                         LogFileResponse)
 
 router = APIRouter()
 
