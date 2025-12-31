@@ -1,0 +1,35 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+sqlalchemy==2.0.23
+psycopg2-binary>=2.9.0
+pydantic>=2.9.0
+pydantic-settings>=2.5.0
+python-multipart==0.0.6
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt>=4.0.0
+aiofiles==23.2.1
+# regex paketi Python 3.13 ile uyumlu değil, built-in 're' modülü kullanılıyor
+# regex>=2024.0.0
+# Grafik için opsiyonel paketler (Python 3.13 için şimdilik atlandı)
+# pandas>=2.2.0
+# matplotlib>=3.8.0
+# seaborn>=0.13.0
+openai>=1.12.0
+# Caching
+redis>=5.0.0
+# Background Jobs
+celery>=5.3.0
+# Export
+reportlab>=4.0.0
+openpyxl>=3.1.0
+# AI/ML
+scikit-learn>=1.3.0
+numpy>=1.24.0
+# Monitoring
+prometheus-client>=0.19.0
+# Email
+fastapi-mail>=1.4.0
+# HTTP client for webhooks
+httpx>=0.27.0
+

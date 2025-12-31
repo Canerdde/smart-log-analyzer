@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "Log Analyzer Mobile",
+    "slug": "loganalyzer-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    // "icon": "./assets/icon.png", // Opsiyonel - production için eklenebilir
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#667eea"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#667eea"
+      }
+    }
+  }
+}
+
