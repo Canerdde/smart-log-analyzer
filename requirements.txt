@@ -1,35 +1,49 @@
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
+
+# Database
 sqlalchemy==2.0.23
 psycopg2-binary>=2.9.0
+
+# Validation & Settings
 pydantic>=2.9.0
 pydantic-settings>=2.5.0
+
+# Auth & Security
 python-multipart==0.0.6
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 bcrypt>=4.0.0
+
+# File handling
 aiofiles==23.2.1
-# regex paketi Python 3.13 ile uyumlu değil, built-in 're' modülü kullanılıyor
-# regex>=2024.0.0
-# Grafik için opsiyonel paketler (Python 3.13 için şimdilik atlandı)
-# pandas>=2.2.0
-# matplotlib>=3.8.0
-# seaborn>=0.13.0
+
+# AI / LLM
 openai>=1.12.0
-# Caching
+
+# Cache & Background jobs
 redis>=5.0.0
-# Background Jobs
 celery>=5.3.0
-# Export
+
+# Export / Reports
 reportlab>=4.0.0
 openpyxl>=3.1.0
-# AI/ML
+
+# AI / ML
 scikit-learn>=1.3.0
 numpy>=1.24.0
+
 # Monitoring
 prometheus-client>=0.19.0
+
 # Email
 fastapi-mail>=1.4.0
-# HTTP client for webhooks
+
+# HTTP Client
 httpx>=0.27.0
 
+# ============================
+# TESTING (CI/CD için gerekli)
+# ============================
+pytest>=8.0.0
+pytest-cov>=5.0.0
